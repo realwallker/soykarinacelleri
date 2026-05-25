@@ -1,0 +1,722 @@
+ esc<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Karina Célleri | Acceso Privado</title>
+    <meta name="description" content="Curaduría inmobiliaria y discreción absoluta. Inversiones Patrimoniales & Bienes Raíces de Alta Gama en Samborondón.">
+    <meta property="og:title" content="Karina Célleri | Inversiones Patrimoniales">
+    <meta property="og:description" content="Curaduría inmobiliaria y discreción absoluta en Samborondón.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_EC">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:ital,opsz,wght@0,14..32,200;0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;1,14..32,300&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --blanco-puro: #FFFFFF;
+            --negro-carbon: #1C2321;
+            --azul-cielo-soft: #A8C3D8;
+            --gris-greige: #D7D1C9;
+            --rosa-viejo: #D9A7A6;
+            --transition-ease: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+            --transition-spring: all 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
+            --font-display: 'Cormorant Garamond', 'Times New Roman', serif;
+            --font-body: 'Inter', 'Helvetica Neue', sans-serif;
+            --radius-container: 28px;
+            --radius-cards: 20px;
+            --radius-buttons: 14px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background: #FFFFFF;
+            height: 100%;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: linear-gradient(135deg, #F9F7F4 0%, #F2EFEA 30%, #EDE9E2 60%, #F5F2EE 100%);
+            background-attachment: fixed;
+            color: var(--negro-carbon);
+            line-height: 1.5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            min-height: 100dvh;
+            padding: 2rem 1.5rem;
+            margin: 0;
+            letter-spacing: -0.01em;
+            font-weight: 300;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(168, 195, 216, 0.1) 0%, transparent 45%),
+                radial-gradient(circle at 80% 70%, rgba(217, 167, 166, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(215, 209, 201, 0.12) 0%, transparent 70%);
+            opacity: 0.8;
+            mix-blend-mode: soft-light;
+        }
+
+        .cursor-dot {
+            pointer-events: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 7px;
+            height: 7px;
+            background-color: var(--rosa-viejo);
+            border-radius: 50%;
+            z-index: 9999;
+            transition: transform 0.06s linear, opacity 0.25s ease;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            mix-blend-mode: difference;
+        }
+        .cursor-ring {
+            pointer-events: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 38px;
+            height: 38px;
+            border: 1.5px solid var(--gris-greige);
+            border-radius: 50%;
+            z-index: 9998;
+            transition: transform 0.15s ease-out, width 0.3s ease, height 0.3s ease,
+                border-color 0.3s ease, background-color 0.3s ease, opacity 0.25s ease;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+        }
+        .cursor-ring.hover-link {
+            width: 52px;
+            height: 52px;
+            border-color: var(--azul-cielo-soft);
+            background-color: rgba(168, 195, 216, 0.07);
+        }
+        .cursor-ring.hover-btn {
+            width: 60px;
+            height: 60px;
+            border-color: var(--rosa-viejo);
+            background-color: rgba(217, 167, 166, 0.12);
+        }
+
+        @media (max-width: 768px) {
+            .cursor-dot,
+            .cursor-ring {
+                display: none;
+            }
+        }
+
+        .linktree-container {
+            width: 100%;
+            max-width: 520px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.8rem;
+            padding: 2.2rem 2rem;
+            position: relative;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: var(--radius-container);
+            box-shadow: 0 25px 50px rgba(28, 35, 33, 0.05);
+            border: 1px solid rgba(215, 209, 201, 0.5);
+        }
+
+        .linktree-container::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1200&h=1200&fit=crop&crop=face&auto=format&q=80');
+            background-size: cover;
+            background-position: center 30%;
+            filter: blur(45px) brightness(1.4) saturate(0.7);
+            opacity: 0.16;
+            border-radius: var(--radius-container);
+            pointer-events: none;
+        }
+
+        .profile-avatar {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center 28%;
+            border: 2px solid var(--gris-greige);
+            padding: 3px;
+            background: #fff;
+            box-shadow: 0 8px 30px rgba(28, 35, 33, 0.04);
+            transition: var(--transition-ease);
+            filter: brightness(0.96) saturate(0.8);
+            animation: fadeInUp 0.9s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+            image-rendering: auto;
+            backface-visibility: hidden;
+        }
+        .profile-avatar:hover {
+            border-color: var(--azul-cielo-soft);
+            filter: brightness(1) saturate(0.9);
+            transform: scale(1.02);
+        }
+
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .profile-name {
+            font-family: var(--font-display);
+            font-size: clamp(2.2rem, 5vw, 2.8rem);
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            text-align: center;
+            animation: fadeInUp 0.9s 0.1s ease forwards;
+            opacity: 0;
+            transform: translateY(20px);
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+        }
+        .profile-subtitle {
+            font-family: var(--font-display);
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            font-style: italic;
+            font-weight: 300;
+            letter-spacing: 0.04em;
+            color: #4a504e;
+            text-align: center;
+            margin-top: -0.6rem;
+            animation: fadeInUp 0.9s 0.2s ease forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .profile-tagline {
+            font-family: var(--font-body);
+            font-size: 0.78rem;
+            font-weight: 300;
+            line-height: 1.7;
+            color: #5a605d;
+            text-align: center;
+            max-width: 380px;
+            padding: 0 0.5rem;
+            border-left: 2px solid var(--gris-greige);
+            margin-top: 0.1rem;
+            animation: fadeInUp 0.9s 0.3s ease forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .divider {
+            width: 40px;
+            height: 1px;
+            background: var(--gris-greige);
+            margin: 0.2rem 0;
+            animation: fadeInUp 0.9s 0.4s ease forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .social-links {
+            width: 100%;
+            display: flex;
+            gap: 1rem;
+            animation: fadeInUp 0.9s 0.5s ease forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .social-btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            padding: 0.9rem 1rem;
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(4px);
+            border: 1px solid var(--gris-greige);
+            border-radius: var(--radius-buttons);
+            text-decoration: none;
+            color: var(--negro-carbon);
+            font-size: 0.78rem;
+            font-weight: 400;
+            letter-spacing: 0.04em;
+            transition: var(--transition-ease);
+            position: relative;
+        }
+        .social-btn:hover {
+            border-color: var(--azul-cielo-soft);
+            box-shadow: 0 8px 20px rgba(28, 35, 33, 0.06);
+            transform: translateY(-1px);
+            background: #fff;
+        }
+        .social-btn svg {
+            width: 18px;
+            height: 18px;
+            color: var(--azul-cielo-soft);
+            transition: var(--transition-ease);
+        }
+        .social-btn:hover svg { color: var(--rosa-viejo); }
+
+        .projects-grid {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            animation: fadeInUp 0.9s 0.65s ease forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .project-square {
+            position: relative;
+            aspect-ratio: 1 / 1;
+            border-radius: var(--radius-cards);
+            overflow: hidden;
+            cursor: pointer;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1.4rem;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: var(--transition-ease);
+            border: 1px solid rgba(255,255,255,0.3);
+            box-shadow: 0 8px 20px rgba(28,35,33,0.08);
+            isolation: isolate;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+            will-change: transform;
+        }
+        .project-square::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(28,35,33,0.6) 0%, rgba(28,35,33,0.1) 55%);
+            z-index: 1;
+            transition: var(--transition-ease);
+        }
+        .project-square:hover::before {
+            background: linear-gradient(to top, rgba(28,35,33,0.75) 0%, rgba(28,35,33,0.2) 55%);
+        }
+        .project-square:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 32px rgba(28,35,33,0.12);
+            border-color: rgba(255,255,255,0.5);
+        }
+        .project-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+        }
+        .project-text {
+            flex: 1;
+        }
+        .project-kicker {
+            font-size: 0.55rem;
+            font-weight: 500;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0.4rem;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+        .project-title {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            line-height: 1.2;
+            color: #fff;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.25);
+        }
+        .project-logo-img {
+            width: 42px;
+            height: 42px;
+            object-fit: contain;
+            margin-left: 0.8rem;
+            flex-shrink: 0;
+            filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3));
+            transition: var(--transition-ease);
+            image-rendering: auto;
+        }
+        .project-square:hover .project-logo-img {
+            transform: scale(1.08);
+        }
+
+        /* Fondos de proyectos con imágenes de alta resolución */
+        .proj-aires-este {
+            background-image: url('assets/projects/aires-este/bg.webp');
+        }
+        .proj-aires-sur {
+            background-image: url('assets/projects/aires-sur/bg.webp');
+        }
+        .proj-batan {
+            background-image: url('assets/projects/batan-business-park/bg.webp');
+        }
+        .proj-towncenter {
+            background-image: url('assets/projects/town-center-aires-este/bg.webp');
+        }
+
+        .btn-whatsapp-main {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.7rem;
+            padding: 1.1rem 2rem;
+            background: transparent;
+            border: 1.5px solid var(--azul-cielo-soft);
+            border-radius: var(--radius-buttons);
+            text-decoration: none;
+            color: var(--negro-carbon);
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            transition: var(--transition-spring);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.9s 0.8s ease forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .btn-whatsapp-main::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--azul-cielo-soft);
+            z-index: -1;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.5s cubic-bezier(0.19,1,0.22,1);
+            border-radius: inherit;
+        }
+        .btn-whatsapp-main:hover::before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        .btn-whatsapp-main:hover {
+            border-color: var(--azul-cielo-soft);
+            gap: 1rem;
+        }
+        .btn-whatsapp-main svg {
+            width: 20px;
+            height: 20px;
+            color: #25D366;
+        }
+
+        .footer-micro {
+            font-size: 0.6rem;
+            font-weight: 300;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #b0aaa2;
+            text-align: center;
+            animation: fadeInUp 0.9s 0.9s ease forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        /* ─── MODAL DE GALERÍA ──────────────────────────── */
+        .gallery-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(28, 35, 33, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        .gallery-modal.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            max-width: 700px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            padding: 0.5rem;
+            transform: scale(0.92);
+            transition: transform 0.55s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        .gallery-modal.active .gallery-grid {
+            transform: scale(1);
+        }
+        .gallery-item {
+            aspect-ratio: 4/3;
+            border-radius: var(--radius-cards);
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            transition: var(--transition-ease);
+            cursor: default;
+            background-size: cover;
+            background-position: center;
+            image-rendering: auto;
+        }
+        .gallery-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 24px 48px rgba(0,0,0,0.4);
+        }
+        .modal-close-hint {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            color: rgba(255,255,255,0.7);
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: var(--transition-ease);
+            z-index: 10001;
+        }
+        .modal-close-hint:hover {
+            color: #fff;
+        }
+
+        @media (max-width: 500px) {
+            body { padding: 1.2rem 1rem; align-items: flex-start; padding-top: 2rem; }
+            .linktree-container { padding: 1.8rem 1.4rem; gap: 1.5rem; }
+            .profile-avatar { width: 90px; height: 90px; }
+            .profile-name { font-size: 2rem; }
+            .project-title { font-size: 1rem; }
+            .project-logo-img { width: 34px; height: 34px; }
+            .gallery-grid { grid-template-columns: 1fr; max-height: 80vh; }
+            .gallery-item { aspect-ratio: 16/10; }
+        }
+    </style>
+<link rel="icon" type="image/png" sizes="180x180" href="assets/favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon.png">
+</head>
+<body>
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <main class="linktree-container">
+        <img src="assets/profile/profile.webp"
+             alt="Karina Célleri" class="profile-avatar" loading="eager">
+
+        <h1 class="profile-name">Karina Célleri</h1>
+        <p class="profile-subtitle">Inversiones Patrimoniales & Bienes Raíces de Alta Gama</p>
+        <p class="profile-tagline">
+            "Curaduría inmobiliaria y discreción absoluta en las zonas de mayor plusvalía de Samborondón."
+        </p>
+
+        <div class="divider"></div>
+
+        <div class="social-links">
+            <a href="https://instagram.com/soykarinacelleri" target="_blank" rel="noopener" class="social-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+                Instagram
+            </a>
+            <a href="https://tiktok.com/@soykarinacelleri" target="_blank" rel="noopener" class="social-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+                TikTok
+            </a>
+        </div>
+
+        <div class="projects-grid">
+            <div class="project-square proj-aires-este" data-project="aires-este">
+                <div class="project-content">
+                    <div class="project-text">
+                        <div class="project-kicker">Residencias de Autor</div>
+                        <div class="project-title">Aires Este</div>
+                    </div>
+                    <img src="assets/projects/aires-este/logo.png" alt="Logo Aires Este" class="project-logo-img">
+                </div>
+            </div>
+            <div class="project-square proj-aires-sur" data-project="aires-sur">
+                <div class="project-content">
+                    <div class="project-text">
+                        <div class="project-kicker">Lotes Premium</div>
+                        <div class="project-title">Aires Sur</div>
+                    </div>
+                    <img src="assets/projects/aires-sur/logo.png" alt="Logo Aires Sur" class="project-logo-img">
+                </div>
+            </div>
+            <div class="project-square proj-batan" data-project="batan">
+                <div class="project-content">
+                    <div class="project-text">
+                        <div class="project-kicker">Distrito de Negocios</div>
+                        <div class="project-title">Batán Business Park</div>
+                    </div>
+                    <img src="assets/projects/batan-business-park/logo.png" alt="Logo Batán" class="project-logo-img">
+                </div>
+            </div>
+            <div class="project-square proj-towncenter" data-project="towncenter">
+                <div class="project-content">
+                    <div class="project-text">
+                        <div class="project-kicker">Alta Estrategia</div>
+                        <div class="project-title">Town Center Aires Este</div>
+                    </div>
+                    <img src="assets/projects/town-center-aires-este/logo.png" alt="Logo Town Center" class="project-logo-img">
+                </div>
+            </div>
+        </div>
+
+        <a href="https://wa.me/593985166184?text=Estimada%20Karina,%20he%20revisado%20su%20portafolio%20digital%20y%20deseo%20coordinar%20una%20sesión%20privada%20para%20evaluar%20oportunidades%20de%20inversión%20en%20Samborondón."
+           target="_blank" rel="noopener" class="btn-whatsapp-main" id="btnWhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+            Agenda una cita conmigo.
+        </a>
+
+        <p class="footer-micro">
+            &copy; <span id="currentYear"></span> Karina Célleri · Confidencialidad · Samborondón
+        </p>
+    </main>
+
+    <!-- Modal de galería -->
+    <div class="gallery-modal" id="galleryModal">
+        <span class="modal-close-hint" id="modalCloseHint">Cerrar</span>
+        <div class="gallery-grid" id="galleryGrid"></div>
+    </div>
+
+    <script>
+        (() => {
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+            // Cursor personalizado
+            const dot = document.getElementById('cursorDot');
+            const ring = document.getElementById('cursorRing');
+            let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0, visible = false;
+
+            document.addEventListener('mousemove', e => {
+                mouseX = e.clientX; mouseY = e.clientY;
+                if(!visible) { visible = true; dot.style.opacity = '1'; ring.style.opacity = '1'; }
+                dot.style.transform = `translate(${mouseX-3.5}px, ${mouseY-3.5}px)`;
+            });
+            document.addEventListener('mouseleave', () => { visible = false; dot.style.opacity = '0'; ring.style.opacity = '0'; });
+            document.addEventListener('mouseenter', () => { visible = true; dot.style.opacity = '1'; ring.style.opacity = '1'; });
+
+            function animateRing() {
+                ringX += (mouseX - ringX) * 0.1;
+                ringY += (mouseY - ringY) * 0.1;
+                ring.style.transform = `translate(${ringX-19}px, ${ringY-19}px)`;
+                requestAnimationFrame(animateRing);
+            }
+            animateRing();
+
+            document.querySelectorAll('a, button, .project-square').forEach(el => {
+                el.addEventListener('mouseenter', () => { ring.classList.add('hover-link'); });
+                el.addEventListener('mouseleave', () => { ring.classList.remove('hover-link', 'hover-btn'); });
+            });
+            document.querySelector('.btn-whatsapp-main').addEventListener('mouseenter', function() {
+                ring.classList.add('hover-btn');
+                ring.classList.remove('hover-link');
+            });
+
+            // ─── GALERÍA MODAL ──────────────────────────
+            const modal = document.getElementById('galleryModal');
+            const galleryGrid = document.getElementById('galleryGrid');
+            const closeHint = document.getElementById('modalCloseHint');
+
+            // Banco de imágenes por proyecto (4 fotos c/u) - Unsplash alta calidad
+            const projectImages = {
+                'aires-este': [
+                    'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&auto=format&q=85',
+                    'https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=800&h=600&fit=crop&auto=format&q=85',
+                    'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800&h=600&fit=crop&auto=format&q=85',
+                    'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop&auto=format&q=85'
+                ],
+                'aires-sur': [
+                    'https://images.unsplash.com/photo-1600566753086-00f18f6b0050?w=800&h=600&fit=crop&auto=format&q=85',
+                    'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&h=600&fit=crop&auto=format&q=85',
+                    'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&h=600&fit=crop&auto=format&q=85',
+                    'https://images.unsplash.com/photo-1600566752589-5c7e18d0b0b5?w=800&h=600&fit=crop&auto=format&q=85'
+                ],
+                'batan': [
+                    'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop&auto=format&q=85',
+                    'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&h=600&fit=crop&auto=format&q=85',
+                    'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop&auto=format&q=85',
+                    'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop&auto=format&q=85'
+                ],
+                'towncenter': [
+                    'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop&auto=format&q=85',
+                    'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop&auto=format&q=85',
+                    'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&h=600&fit=crop&auto=format&q=85',
+                    'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop&auto=format&q=85'
+                ]
+            };
+
+            function openGallery(projectId) {
+                const images = projectImages[projectId] || [];
+                galleryGrid.innerHTML = images.map(url => `
+                    <div class="gallery-item" style="background-image: url('${url}');" aria-label="Imagen del proyecto"></div>
+                `).join('');
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeGallery() {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+                setTimeout(() => { galleryGrid.innerHTML = ''; }, 400);
+            }
+
+            // Eventos en tarjetas de proyecto
+            document.querySelectorAll('.project-square').forEach(card => {
+                card.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const project = card.dataset.project;
+                    if (project) openGallery(project);
+                });
+            });
+
+            // Cerrar al hacer clic fuera del grid
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal || e.target === closeHint) {
+                    closeGallery();
+                }
+            });
+
+            // Cerrar con tecla Escape
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    closeGallery();
+                }
+            });
+
+            console.log('%c✨ Karina Célleri · Experiencia Inmersiva %c| %cQuiet Luxury + Galería Dinámica',
+                'font-family:serif;font-size:1.1em;color:#1C2321;',
+                '', 'color:#A8C3D8;');
+        })();
+    </script>
+</body>
+</html>
