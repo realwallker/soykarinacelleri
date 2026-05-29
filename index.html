@@ -517,6 +517,33 @@
 
             console.log('%c🌿 Karina Célleri · Fondo botánico realista %c| %cNaturaleza viva',
                 'font-family:serif;font-size:1.1em;color:#1C2321;', '', 'color:#4A6B5E;');
+
+                // ✨ Precarga de todas las imágenes de galería en segundo plano
+window.addEventListener('load', () => {
+    // Pequeña pausa para no competir con los recursos iniciales del video y la UI
+    setTimeout(() => {
+        const projectIds = ['aires-este', 'aires-sur', 'batan', 'towncenter'];
+        const folderMap = {
+            'aires-este': 'aires-este',
+            'aires-sur': 'aires-sur',
+            'batan': 'batan-business-park',
+            'towncenter': 'town-center-aires-este'
+        };
+        
+        projectIds.forEach(id => {
+            const folder = folderMap[id] || id;
+            const base = `assets/gallery/${folder}`;
+            // Para cada uno de los 4 números de imagen
+            ['01','02','03','04'].forEach(num => {
+                // Intentamos las dos extensiones posibles (.jpeg y .jpg)
+                ['.jpeg', '.jpg'].forEach(ext => {
+                    const img = new Image();
+                    img.src = `${base}/img-${num}${ext}`;
+                });
+            });
+        });
+    }, 1500); // Retraso de 1.5 segundos para garantizar que la UI principal ya se mostró
+});
         })();
     </script>
 </body>
