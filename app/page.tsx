@@ -29,162 +29,162 @@ const WHATSAPP = "593985166184";
 
 const PROJECTS: Project[] = [
   {
-    id: "aires-este",
+    id: "olonesa-house-club",
     order: "01",
-    eyebrow: "Residencial · Entrega próxima",
-    title: "Aires Este",
-    location: "Vía a Samborondón · ingreso Plaza Batán",
+    eyebrow: "Comunidad Privada · Arquitectura Bioclimática",
+    title: "Olonesa Reserva Village",
+    location: "Olón, Santa Elena · Cordillera Chongón-Colonche",
     summary:
-      "Una comunidad privada donde naturaleza, deporte y vida familiar conviven con una planificación de alto nivel.",
+      "Una comunidad residencial de diseño consciente donde el bosque nativo y el océano conviven en perfecta armonía.",
     statement:
-      "Aires Este propone terrenos residenciales dentro de un entorno planificado, con infraestructura soterrada, amplias áreas verdes y amenidades para todas las etapas de la familia.",
-    facts: ["388 lotes", "Desde 338 m²", "Club house + deportes"],
-    logo: "/media/projects/aires-este/logo.png",
-    sourceLabel: "Recursos oficiales · actualización agosto 2026",
+      "Olonesa Reserva Village propone 104 lotes residenciales dentro de más de 100 hectáreas de reserva natural protegida. Un entorno de baja densidad con House Club, piscina infinity, canchas de pádel y senderos ecológicos a solo 3 minutos de la playa de Olón.",
+    facts: ["104 lotes exclusivos", "Desde 507 m²", "+100 Has. Reserva"],
+    logo: "/media/projects/olonesa-reserva-village/logo.png",
+    sourceLabel: "Masterplan oficial · Preventa 2026",
     media: [
       {
-        asset: "/media/projects/aires-este/01-piscina",
-        alt: "Piscina y club house proyectados de Aires Este",
-        label: "Piscina y club house",
+        asset: "/media/projects/olonesa-reserva-village/01-house-club",
+        alt: "House Club y piscina infinity en Olonesa Reserva Village",
+        label: "House Club & Piscina Infinity",
         kind: "Render oficial",
       },
       {
-        asset: "/media/projects/aires-este/02-clubhouse",
-        alt: "Fachada del club house proyectado de Aires Este",
-        label: "Club house",
+        asset: "/media/projects/olonesa-reserva-village/02-lotes-villas",
+        alt: "Villas bioclimáticas en el bosque de Olonesa",
+        label: "Villas en el Bosque",
         kind: "Render oficial",
       },
       {
-        asset: "/media/projects/aires-este/03-parque",
-        alt: "Parque central proyectado de Aires Este",
-        label: "Parque central",
-        kind: "Render oficial",
-      },
-      {
-        asset: "/media/projects/aires-este/04-avance-agosto",
-        alt: "Vista aérea del avance de obra de Aires Este en agosto de 2026",
-        label: "Avance · agosto 2026",
+        asset: "/media/projects/olonesa-reserva-village/03-reserva-trails",
+        alt: "Mirador panorámico y senderos ecológicos en la reserva protegida",
+        label: "Reserva & Senderos",
         kind: "Avance real",
+      },
+      {
+        asset: "/media/projects/olonesa-reserva-village/04-padel-wellness",
+        alt: "Canchas de pádel y área social rodeadas de naturaleza",
+        label: "Pádel & Wellness Lounge",
+        kind: "Render oficial",
       },
     ],
   },
   {
-    id: "aires-sur",
+    id: "olonesa-lotes",
     order: "02",
-    eyebrow: "Residencial · Lotes amplios",
-    title: "Aires Sur",
-    location: "Sector Batán · Vía a Samborondón",
+    eyebrow: "Lotes desde 507 m² · Preventa Exclusiva",
+    title: "Lotes y Residencias",
+    location: "Sector Olonesa · A 3 min de la playa",
     summary:
-      "Más espacio, privacidad y naturaleza para construir una residencia a la medida dentro de un entorno organizado.",
+      "Terrenos de amplia privacidad rodeados de flora nativa, diseñados para construir villas de descanso con alta plusvalía.",
     statement:
-      "Aires Sur integra lotes de gran amplitud, lagos, seguridad y amenidades familiares en una urbanización creada para crecer con orden y preservar valor a largo plazo.",
-    facts: ["312 lotes", "Desde 400 m²", "Más de 50% áreas verdes"],
-    logo: "/media/projects/aires-sur/logo.png",
-    sourceLabel: "Recursos oficiales · avance julio 2026",
+      "Lotes unifamiliares con topografía privilegiada que garantiza vistas despejadas a la cordillera y brisa costera. Infraestructura de primer nivel con servicios soterrados y normas arquitectónicas de diseño sostenible.",
+    facts: ["Lotes desde 507 m²", "Financiamiento directo", "Entrega planificada"],
+    logo: "/media/projects/olonesa-reserva-village/logo.png",
+    sourceLabel: "Selección de lotes · actualización 2026",
     media: [
       {
-        asset: "/media/projects/aires-sur/01-lago",
-        alt: "Vista proyectada del lago central y residencias de Aires Sur",
-        label: "Lago central",
+        asset: "/media/projects/olonesa-reserva-village/02-lotes-villas",
+        alt: "Diseño de villa unifamiliar integrada al entorno natural en Olonesa",
+        label: "Villas residenciales",
         kind: "Render oficial",
       },
       {
-        asset: "/media/projects/aires-sur/02-clubhouse",
-        alt: "Área social proyectada de Aires Sur",
-        label: "Área social",
+        asset: "/media/projects/olonesa-reserva-village/01-house-club",
+        alt: "Área social y House Club proyectado",
+        label: "House Club & Piscina",
         kind: "Render oficial",
       },
       {
-        asset: "/media/projects/aires-sur/03-boulevard",
-        alt: "Boulevard residencial proyectado de Aires Sur",
-        label: "Boulevard residencial",
-        kind: "Render oficial",
-      },
-      {
-        asset: "/media/projects/aires-sur/04-avance-julio",
-        alt: "Vista aérea del avance de obra de Aires Sur en julio de 2026",
-        label: "Avance · julio 2026",
+        asset: "/media/projects/olonesa-reserva-village/03-reserva-trails",
+        alt: "Senderos y áreas verdes protegidas",
+        label: "Entorno natural",
         kind: "Avance real",
+      },
+      {
+        asset: "/media/projects/olonesa-reserva-village/04-padel-wellness",
+        alt: "Área deportiva y de esparcimiento",
+        label: "Pádel & Lounge",
+        kind: "Render oficial",
       },
     ],
   },
   {
-    id: "batan-business-park",
+    id: "olonesa-reserva",
     order: "03",
-    eyebrow: "Corporativo · Inversión",
-    title: "Batán Business Park",
-    location: "Km 8.5 · Vía a Samborondón",
+    eyebrow: "Conservación & Biodiversidad · Bosque Nativo",
+    title: "Reserva Protegida",
+    location: "Cordillera Chongón-Colonche · Olón",
     summary:
-      "Un ecosistema corporativo para oficinas, consultorios y marcas que quieren operar desde el nuevo eje empresarial.",
+      "Más de 100 hectáreas de bosque tropical seco y senderos privados protegidos a perpetuidad para los residentes.",
     statement:
-      "Batán Business Park reúne espacios corporativos flexibles, locales comerciales, parqueos y áreas de encuentro en una ubicación diseñada para generar conexión y proyección empresarial.",
-    facts: ["328 oficinas", "Desde 44 m²", "18 locales comerciales"],
-    logo: "/media/projects/batan-business-park/logo.png",
-    sourceLabel: "Recursos oficiales · selección 2026",
+      "Un compromiso real de conservación ambiental donde más del 70% del macroproyecto se mantiene intacto. Rutas de senderismo, avistamiento de aves, miradores panorámicos y aire puro entre el bosque y el océano Pacífico.",
+    facts: ["+100 Has. protegidas", "Senderos & Miradores", "Reserva permanente"],
+    logo: "/media/projects/olonesa-reserva-village/logo.png",
+    sourceLabel: "Conservación ecológica certificada",
     media: [
       {
-        asset: "/media/projects/batan-business-park/01-fachada",
-        alt: "Fachada proyectada de Batán Business Park",
-        label: "Fachada corporativa",
-        kind: "Render oficial",
-      },
-      {
-        asset: "/media/projects/batan-business-park/02-oficinas",
-        alt: "Interior proyectado de oficinas de Batán Business Park",
-        label: "Oficinas flexibles",
-        kind: "Render oficial",
-      },
-      {
-        asset: "/media/projects/batan-business-park/03-lobby",
-        alt: "Lobby proyectado de Batán Business Park",
-        label: "Lobby y recepción",
-        kind: "Render oficial",
-      },
-      {
-        asset: "/media/projects/batan-business-park/04-avance",
-        alt: "Vista aérea del avance de obra de Batán Business Park",
-        label: "Avance de obra",
+        asset: "/media/projects/olonesa-reserva-village/03-reserva-trails",
+        alt: "Mirador hacia las colinas verdes y el océano en Olón",
+        label: "Mirador a la Cordillera y el Mar",
         kind: "Avance real",
+      },
+      {
+        asset: "/media/projects/olonesa-reserva-village/01-house-club",
+        alt: "House Club integrado en la vegetación nativa",
+        label: "House Club integrado",
+        kind: "Render oficial",
+      },
+      {
+        asset: "/media/projects/olonesa-reserva-village/02-lotes-villas",
+        alt: "Villas sostenibles en medio del bosque",
+        label: "Villas sostenibles",
+        kind: "Render oficial",
+      },
+      {
+        asset: "/media/projects/olonesa-reserva-village/04-padel-wellness",
+        alt: "Bienestar y deporte en medio de la reserva",
+        label: "Wellness en el bosque",
+        kind: "Render oficial",
       },
     ],
   },
   {
-    id: "town-center",
+    id: "olonesa-lifestyle",
     order: "04",
-    eyebrow: "Uso mixto · Comercio y oficinas",
-    title: "Town Center Aires Este",
-    location: "Vía a Samborondón · ingreso Plaza Batán",
+    eyebrow: "Amenidades Premium · Estilo de Vida Costero",
+    title: "Pádel, Gastronomía & Vida",
+    location: "Olón · Junto a Olonesa Reserva Lodge",
     summary:
-      "Un boulevard de uso mixto que conecta oficinas, comercio y comunidad dentro del ecosistema Aires Este.",
+      "Canchas de pádel de cristal, gastronomía de autor, wellness y la tranquilidad de la playa más cotizada de la costa.",
     statement:
-      "Town Center Aires Este combina edificios corporativos de baja altura, locales en planta baja, boulevard comercial y parqueos para impulsar negocios cerca de una comunidad residencial activa.",
-    facts: ["Oficinas desde 40 m²", "Boulevard comercial", "Parqueo subterráneo"],
-    logo: "/media/projects/town-center/logo.png",
-    sourceLabel: "Recursos oficiales · actualización agosto 2026",
+      "Vecino al prestigioso Olonesa Reserva Lodge y su afamado restaurante Bruma, el club ofrece canchas de pádel reglamentarias, áreas lounge, coworking en la naturaleza y seguridad 24/7 con control de acceso inteligente.",
+    facts: ["Canchas de Pádel", "Gastronomía & Lounge", "Seguridad 24/7"],
+    logo: "/media/projects/olonesa-reserva-village/logo.png",
+    sourceLabel: "Experiencia Olón · Estilo de vida",
     media: [
       {
-        asset: "/media/projects/town-center/01-fachada",
-        alt: "Fachada proyectada de Town Center Aires Este",
-        label: "Fachada y boulevard",
+        asset: "/media/projects/olonesa-reserva-village/04-padel-wellness",
+        alt: "Canchas de pádel y lounge social en Olonesa",
+        label: "Pádel Lounge & Bar",
         kind: "Render oficial",
       },
       {
-        asset: "/media/projects/town-center/02-oficinas",
-        alt: "Interior proyectado de oficinas de Town Center Aires Este",
-        label: "Espacios de oficina",
+        asset: "/media/projects/olonesa-reserva-village/01-house-club",
+        alt: "Piscina social y asoleaderos",
+        label: "Piscina social",
         kind: "Render oficial",
       },
       {
-        asset: "/media/projects/town-center/03-masterplan",
-        alt: "Masterplan de Town Center integrado a Aires Este",
-        label: "Integración urbana",
-        kind: "Masterplan",
-      },
-      {
-        asset: "/media/projects/town-center/04-avance-agosto",
-        alt: "Vista aérea del avance de obra de Town Center Aires Este en agosto de 2026",
-        label: "Avance · agosto 2026",
+        asset: "/media/projects/olonesa-reserva-village/03-reserva-trails",
+        alt: "Rutas de trekking y contacto con la naturaleza",
+        label: "Rutas de trekking",
         kind: "Avance real",
+      },
+      {
+        asset: "/media/projects/olonesa-reserva-village/02-lotes-villas",
+        alt: "Villas exclusivas rodeadas de palmeras y vegetación",
+        label: "Villas exclusivas",
+        kind: "Render oficial",
       },
     ],
   },
@@ -316,8 +316,8 @@ function ProjectImage({
 
 function whatsappUrl(project?: Project) {
   const message = project
-    ? `Hola Karina, estuve revisando tu portafolio y me interesa conocer más sobre ${project.title}. ¿Podemos conversar?`
-    : "Hola Karina, revisé tu portafolio inmobiliario y quisiera conversar sobre oportunidades en Samborondón.";
+    ? `Hola Karina, estuve revisando tu portafolio y me interesa conocer más sobre Olonesa Reserva Village (${project.title}). ¿Podemos conversar?`
+    : "Hola Karina, estuve revisando tu portafolio y quisiera conversar sobre oportunidades de inversión en Olonesa Reserva Village en Olón.";
   return `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(message)}`;
 }
 
@@ -420,7 +420,7 @@ export default function Home() {
         <header className="identity-panel glass-panel">
           <div className="identity-topline">
             <span className="status-dot" />
-            <span>Asesoría privada · Samborondón</span>
+            <span>Asesoría Privada · Curaduría Inmobiliaria</span>
           </div>
 
           <div className="identity-person">
@@ -443,7 +443,7 @@ export default function Home() {
           </div>
 
           <p className="identity-statement">
-            Oportunidades seleccionadas para vivir, invertir y construir patrimonio en las zonas de mayor proyección.
+            Curaduría de proyectos residenciales exclusivos y comunidades conscientes en las zonas de mayor proyección de la Costa y Samborondón.
           </p>
 
           <nav className="profile-links" aria-label="Redes sociales de Karina Célleri">
@@ -721,7 +721,7 @@ export default function Home() {
             "@type": "Person",
             name: "Karina Célleri",
             jobTitle: "Asesora de inversiones inmobiliarias",
-            areaServed: "Samborondón, Ecuador",
+            areaServed: ["Olón, Ecuador", "Samborondón, Ecuador", "Santa Elena, Ecuador"],
             sameAs: [
               "https://www.instagram.com/soykarinacelleri/",
               "https://www.tiktok.com/@soykarinacelleri",

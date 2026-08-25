@@ -18,32 +18,33 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Karina Célleri | Inversiones y bienes raíces en Samborondón",
+  metadataBase: new URL("https://soykarinacelleri.vercel.app"),
+  title: "Karina Célleri | Olonesa Reserva Village · Inversiones Inmobiliarias",
   description:
-    "Portafolio inmobiliario de Karina Célleri: proyectos residenciales, comerciales y corporativos seleccionados en Samborondón.",
+    "Descubre Olonesa Reserva Village en Olón con Karina Célleri: 104 lotes residenciales en más de 100 hectáreas de reserva natural protegida al pie de la cordillera Chongón-Colonche.",
   applicationName: "Karina Célleri",
   authors: [{ name: "Karina Célleri" }],
   category: "Real Estate",
   openGraph: {
-    title: "Karina Célleri | Portafolio inmobiliario",
+    title: "Karina Célleri | Olonesa Reserva Village · Olón",
     description:
-      "Oportunidades seleccionadas para vivir, invertir y construir patrimonio en Samborondón.",
+      "Oportunidad de inversión y vida consciente: 104 lotes desde 507 m² rodeados de bosque nativo y mar en Olón.",
     type: "profile",
     locale: "es_EC",
     images: [
       {
-        url: "/media/profile/karina.webp",
-        width: 800,
-        height: 800,
-        alt: "Karina Célleri, asesora inmobiliaria",
+        url: "/media/projects/olonesa-reserva-village/01-house-club-wide.webp",
+        width: 1920,
+        height: 1080,
+        alt: "Olonesa Reserva Village en Olón - House Club y Piscina",
       },
     ],
   },
   twitter: {
-    card: "summary",
-    title: "Karina Célleri | Portafolio inmobiliario",
-    description: "Proyectos residenciales, comerciales y corporativos en Samborondón.",
-    images: ["/media/profile/karina.webp"],
+    card: "summary_large_image",
+    title: "Karina Célleri | Olonesa Reserva Village · Olón",
+    description: "104 lotes exclusivos en más de 100 hectáreas de reserva natural protegida.",
+    images: ["/media/projects/olonesa-reserva-village/01-house-club-wide.webp"],
   },
   other: {
     "codex-preview": "development",
